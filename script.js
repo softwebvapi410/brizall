@@ -93,7 +93,7 @@ form.addEventListener("submit", async (e) => {
   };
 
   try {
-    const res = await fetch("/api/send-lead.php", {
+    const res = await fetch("https://brizall.com/api/send-lead.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
