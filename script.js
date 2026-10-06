@@ -25,6 +25,7 @@ const submitBtn = document.getElementById("submitBtn");
 const formNote = document.getElementById("formNote");
 const formStep = document.getElementById("formStep");
 const downloadStep = document.getElementById("downloadStep");
+const leadApiUrl = "https://brizall.com/api/send-lead.php";
 
 const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
@@ -93,7 +94,7 @@ form.addEventListener("submit", async (e) => {
   };
 
   try {
-    const res = await fetch("https://brizall.com/api/send-lead.php", {
+    const res = await fetch(leadApiUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
