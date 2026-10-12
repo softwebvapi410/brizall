@@ -20,6 +20,43 @@
   z-index: 10;
 }
 
+.langToggle{
+  position:fixed;
+  top:24px;
+  right:24px;
+  z-index:10;
+  display:flex;
+  align-items:center;
+  gap:3px;
+  padding:3px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#141414;
+}
+
+.langBtn{
+  min-width:42px;
+  padding:7px 10px;
+  border:0;
+  border-radius:999px;
+  background:transparent;
+  color:var(--ink-dim);
+  font:inherit;
+  font-size:12px;
+  font-weight:650;
+  cursor:pointer;
+}
+
+.langBtn[aria-pressed="true"]{
+  background:var(--accent);
+  color:var(--accent-ink);
+}
+
+.langBtn:focus-visible{
+  outline:2px solid var(--ink);
+  outline-offset:2px;
+}
+
 *{ box-sizing: border-box; }
 
 body{
@@ -148,6 +185,11 @@ button[type="submit"]:disabled{ opacity: 0.6; cursor: default; }
 
 .downloadBtn:hover{ opacity: 0.9; }
 
+.downloadGroup{
+  display:grid;
+  gap:12px;
+}
+
 /* intl-tel-input dropdown — override its light-theme defaults for dark bg */
 .iti__country-list{
   background: #1C1C1C;
@@ -194,6 +236,13 @@ button[type="submit"]:disabled{ opacity: 0.6; cursor: default; }
 
 @media (prefers-reduced-motion: no-preference){
   .step{ animation: fade 0.25s ease; }
+}
+
+@media (max-width: 520px){
+  .logo{ top:18px; left:18px; height:28px; }
+  .langToggle{ top:16px; right:16px; }
+  body{ padding:76px 18px 24px; }
+  .card{ padding:32px 24px; }
 }
 @keyframes fade{
   from{ opacity:0; transform: translateY(4px); }
